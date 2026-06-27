@@ -35,10 +35,24 @@ Number of swaps needed to sort.
 ### Binary Search
 ```cpp
 for (int b = n/2; b >= 1; b /= 2) {
-    while ()
+    while (nums[ind+b] <= target && ind + b <= n) ind += b;
 }
 ```
+This does NOT go into overflow. Switching order of `&&` does. Interesting...
 
 ## Data Structures
 
-### 
+## New Syntax Stuff
+
+### Lambdas!
+Good functions. Basically variables which can access stuff from surrounding scope. 
+capture list: capture stuff (like arguments, but defined separately because they're not passed). `[&]` means capture EVERYTHING by reference. Learnt while Factory Machines.
+Syntax:
+
+```cpp
+auto lambda_name [capture_list](argument) {
+    // code
+    return value_of_lambda_name;
+    // lambda_name is essentially a variable
+}
+```
